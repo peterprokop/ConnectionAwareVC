@@ -3,19 +3,19 @@
 //  Crowdshipping
 //
 //  Created by Peter Prokop on 30/03/15.
-//  Copyright (c) 2015 Whitescape. All rights reserved.
+//  Copyright (c) 2015 Peter Prokop. All rights reserved.
 //
 
 import UIKit
 import ReachabilitySwift
 
-class ConnectionAwareVC: UIViewController {
+public class ConnectionAwareVC: UIViewController {
     
     // Customizable
-    var animationDuration = NSTimeInterval(0.5)
-    var popupText = "No active internet connection"
-    var popupBackgroundColor = UIColor.redColor()
-    var popupTextColor = UIColor.whiteColor()
+    public var animationDuration = NSTimeInterval(0.5)
+    public var popupText = "No active internet connection"
+    public var popupBackgroundColor = UIColor.redColor()
+    public var popupTextColor = UIColor.whiteColor()
     
     let reachability = Reachability.reachabilityForInternetConnection()
     var label : UILabel?
@@ -24,9 +24,9 @@ class ConnectionAwareVC: UIViewController {
         reachability.stopNotifier()
     }
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
-
+        
         weak var wSelf = self
         
         reachability.whenReachable = { reachability in
@@ -54,7 +54,7 @@ class ConnectionAwareVC: UIViewController {
         reachability.startNotifier()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override public func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
         if !reachability.isReachable() {
@@ -77,11 +77,11 @@ class ConnectionAwareVC: UIViewController {
         label!.textAlignment = .Center
         
         view.addSubview(label!)
-
+        
         label!.setTranslatesAutoresizingMaskIntoConstraints(false)
         var topGuide = self.topLayoutGuide
         let viewsDictionary = ["label": label!, "topGuide": topGuide] as [NSObject: AnyObject]
-
+        
         let constraintsV = NSLayoutConstraint.constraintsWithVisualFormat("V:[topGuide]-0-[label(10@20)]",
             options: NSLayoutFormatOptions(rawValue: 0),
             metrics: nil,
