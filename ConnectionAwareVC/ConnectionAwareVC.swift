@@ -24,8 +24,8 @@ public class ConnectionAwareVC: UIViewController {
         reachability.stopNotifier()
     }
     
-    override public func viewDidLoad() {
-        super.viewDidLoad()
+    override public func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
         weak var wSelf = self
         
@@ -52,14 +52,16 @@ public class ConnectionAwareVC: UIViewController {
         }
         
         reachability.startNotifier()
-    }
-    
-    override public func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
         
         if !reachability.isReachable() {
             showNoConnectionMessage()
         }
+    }
+    
+    public override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        reachability.stopNotifier()
     }
     
     func showNoConnectionMessage() {
