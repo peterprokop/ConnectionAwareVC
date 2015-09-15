@@ -2,7 +2,7 @@
 UIViewController subclass which shows user notification if internet connection is lost.
 Like this:
 
-![Wait](http://i.imgur.com/ydqo947.png)
+![Wait](http://i.imgur.com/Qdbjg72.png)
 
 ## Installation
 
