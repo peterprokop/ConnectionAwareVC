@@ -31,3 +31,5 @@ use_frameworks!
 
 If you're using CocoaPods, import the library with `import ConnectionAwareVC`
 Subclass your view controllers from ConnectionAwareVC.
+
+Also, check out [SwiftOverlays](https://github.com/peterprokop/SwiftOverlays/)
