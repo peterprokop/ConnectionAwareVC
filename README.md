@@ -6,8 +6,8 @@ Like this:
 
 ## Installation
 
-### Cocoapods
-- Make sure that you use latest stable Cocoapods version: `pod --version`
+### CocoaPods
+- Make sure that you use latest stable CocoaPods version: `pod --version`
 - If not, update it: `sudo gem install cocoapods`
 - `pod init` in you project root dir
 - `nano Podfile`, add:
@@ -23,7 +23,7 @@ use_frameworks!
 
 ## Requirements
 - Swift 1.2
-- iOS 7.0+ (8.0+ if you use Cocoapods)
+- iOS 7.0+ (8.0+ if you use CocoaPods)
 - Xcode 6.3+
 - This library is dependent on [ReachabilitySwift](https://github.com/ashleymills/Reachability.swift)
 
